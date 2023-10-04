@@ -77,7 +77,7 @@ resource "proxmox_vm_qemu" "kube-node" {
     slot = 0
     size = "10G"
     type = "scsi"
-    storage = "nvme001"
+    storage = "nvme002"
     iothread = 1
     discard = "yes"
     ssd = 1
