@@ -28,11 +28,11 @@ resource "proxmox_vm_qemu" "kube-server" {
   agent = 1
   os_type = "cloud-init"
   cores = 4
-  socket = 1
+  sockets = 1
   cpu = "host"
   memory = 4096
   scsihw = "virtio-scsi-single"
-  bootsidk = "scsi0"
+  bootdisk = "scsi0"
 
   disk {
     slot = 0
@@ -69,7 +69,7 @@ resource "proxmox_vm_qemu" "kube-node" {
   cores = 2
   cpu = "host"
   memory = 2048
-  socket = 1
+  sockets = 1
   scsihw = "virtio-scsi-single"
   bootdisk = "scsi0"
 
