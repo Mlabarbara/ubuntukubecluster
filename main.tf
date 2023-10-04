@@ -40,7 +40,7 @@ resource "proxmox_vm_qemu" "kube-server" {
     type = "scsi"
     storage = "nvme001"
     iothread = 1
-    discard = "yes"
+    discard = "on"
     ssd = 1
   }
   network {
@@ -79,7 +79,7 @@ resource "proxmox_vm_qemu" "kube-node" {
     type = "scsi"
     storage = "nvme002"
     iothread = 1
-    discard = "yes"
+    discard = "on"
     ssd = 1
   }
   network {
