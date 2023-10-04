@@ -62,7 +62,7 @@ resource "proxmox_vm_qemu" "kube-node" {
   target_node = "r630-pve"
   vmid = "101${count.index + 1}"
 
-  clone = "ubuntu-2004-cloudinit-template"
+  clone = "ubuntu-2004-cloudinit-node"
   full_clone = true
   agent = 1
   os_type = "cloud-int"
@@ -93,6 +93,6 @@ resource "proxmox_vm_qemu" "kube-node" {
 
   ipconfig0 = "ip=192.168.2${count.index + 1}.10${count.index + 1}/16,gw=192.168.10.1"
   ipconfig1 = "ip=10.10.10.2${count.index + 1}/24"
-
+  sshkeys = var.ssh_key
   
 }
